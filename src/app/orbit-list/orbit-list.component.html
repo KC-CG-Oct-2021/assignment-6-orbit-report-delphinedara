@@ -16,7 +16,8 @@
     <!-- Displaying satellite data in the table using *ngFor -->
     <tr *ngFor=" let satellite of satellites">
         <td>{{satellite.name}}</td>
-        <td>{{satellite.type}}</td>
+        <!-- Adding style directive to conditionally highlight satellite type = 'Space Debris' -->
+        <td [class.warning]="satellite.isSpaceDebris()">{{satellite.type}}</td>
         <td>{{satellite.launchDate}}</td>
         <td>{{satellite.orbitType}}</td>
         <td>{{satellite.operational}}</td>
@@ -25,5 +26,6 @@
 </table>
 
 
-<!-- TODO 3b: add style directive to conditionally highlight satellite type -->
+
+
 
